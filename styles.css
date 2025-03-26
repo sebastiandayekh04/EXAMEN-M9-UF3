@@ -1,0 +1,78 @@
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+.container-clock {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    background: url('Einstein.jpg') no-repeat center;
+    background-size: cover;
+    border-radius: 50%;
+    margin-top: 180px; 
+    border: 1px solid azure; 
+}
+.titulo {
+    position: absolute;
+    width: 100%;
+    font-size: 40px; 
+    animation: bajar 1s ease-out forwards;
+}
+
+@keyframes bajar {
+    from {
+        top: -80px;
+        opacity: 0;
+    }
+    to {
+        top: -50px; 
+        opacity: 1;
+    }
+}
+
+.manecilla {
+    transform-origin: 200px 200px; /* Centro del reloj */
+    transform: rotate(0deg);
+}
+.minutos {
+    animation: rotarMin 180s linear infinite;
+}
+.segundos {
+    animation: rotarSeg 15s linear infinite;
+}
+@keyframes rotarMin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes rotarSeg {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.container-clock:hover::after {
+    content: "El tiempo es relativo";
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    color: black; 
+    background: white; 
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    animation: aparecer 0.5s ease-in-out forwards; 
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
