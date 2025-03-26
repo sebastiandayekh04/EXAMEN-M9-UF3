@@ -53,10 +53,8 @@ body {
 }
 
 .container-clock:hover::after {
-    content: "El tiempo es relativo";
+    content: " El tiempo es relativo ";
     position: absolute;
-    bottom: -30px;
-    left: 50%;
     transform: translateX(-50%);
     font: bold 16px Arial, sans-serif; 
     color: black;
